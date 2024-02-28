@@ -13,10 +13,10 @@ import {
 } from './services/temperature-service';
 
 export default function App() {
-  const [inputValue, setInputValue] = useState(DEFAULT_TEMPERATURE);
-  const [currentUnit, setCurrentUnit] = useState(DEFAULT_UNIT);
+  const [inputValue, setInputValue] = useState<string>(DEFAULT_TEMPERATURE);
+  const [currentUnit, setCurrentUnit] = useState<string>(DEFAULT_UNIT);
   const [currentBackground, setCurrentBackground] = useState();
-  const oppositeUnit = getOppositUnit(currentUnit);
+  const oppositeUnit: string = getOppositUnit(currentUnit);
 
   useEffect(() => {
     const temperatureAsFloat = Number.parseFloat(inputValue);

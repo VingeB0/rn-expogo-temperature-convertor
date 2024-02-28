@@ -1,10 +1,10 @@
 import { UNITS } from '../constant';
 
-function getOppositUnit(unit) {
+function getOppositUnit(unit: string) {
   return unit === UNITS.celcius ? UNITS.faranheit : UNITS.celcius;
 }
 
-function convertTemperatureTo(unit, value) {
+function convertTemperatureTo(unit: string, value: number) {
   if (unit === UNITS.celcius) {
     return (value - 32) / 1.8;
   } else {
@@ -12,11 +12,12 @@ function convertTemperatureTo(unit, value) {
   }
 }
 
-function isIceTemperature(value, unit) {
+function isIceTemperature(value: string, unit: string) {
+  const numberValue = Number(value);
   if (unit === UNITS.celcius) {
-    return value <= 0;
+    return numberValue <= 0;
   } else {
-    return value <= 32;
+    return numberValue <= 32;
   }
 }
 
